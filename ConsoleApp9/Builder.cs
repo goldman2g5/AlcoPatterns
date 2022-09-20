@@ -4,22 +4,18 @@ using System.Text;
 
 namespace ConsoleApplication3
 {
-    //мука
     [Serializable]
     public class ArmorType
     {
-        // какого сорта мука
         public string Type { get; set; }
     }
-
-// соль
+    
     [Serializable]
     public class WeaponType
     {
         public string Type { get; set; }
     }
-
-// пищевые добавки
+    
     [Serializable]
     public class Artifact
     {
@@ -29,13 +25,10 @@ namespace ConsoleApplication3
     [Serializable]
     public class Equipment
     {
-        // мука
         public ArmorType ArmorType { get; set; }
 
-        // соль
         public WeaponType WeaponType { get; set; }
-
-        // пищевые добавки
+        
         public List<Artifact> Artifacts = new List<Artifact>();
 
         public override string ToString()
@@ -67,7 +60,6 @@ namespace ConsoleApplication3
         public abstract void SetWeapon();
         public abstract void SetArtifacts();
     }
-// пекарь
     class Blacksmith
     {
         public Equipment Assemble(EquipmentBuilder equipmentBuilder)
@@ -79,7 +71,6 @@ namespace ConsoleApplication3
             return equipmentBuilder.Equipment;
         }
     }
-// строитель для ржаного хлеба
     class ElfEquipmentBuilder : EquipmentBuilder
     {
         public override void SetArmor()
@@ -92,12 +83,8 @@ namespace ConsoleApplication3
             this.Equipment.WeaponType = new WeaponType { Type = "Арбалает из великого дерева" };
         }
  
-        public override void SetArtifacts()
-        {
-            // не используется
-        }
+        public override void SetArtifacts() { }
     }
-// строитель для пшеничного хлеба
     class WariorEquipmentBuilder : EquipmentBuilder
     {
         public override void SetArmor()

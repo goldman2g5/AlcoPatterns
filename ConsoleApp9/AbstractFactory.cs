@@ -7,14 +7,12 @@ namespace ConsoleApplication3
     {
         public abstract void Hit();
     }
-
-// абстрактный класс движение
+    
     [Serializable]
     public abstract class Movement
     {
         public abstract void Move();
     }
-// класс арбалет
     [Serializable]
     public class Arbalet : Weapon
     {
@@ -23,8 +21,7 @@ namespace ConsoleApplication3
             Console.WriteLine("Стреляем из арбалета");
         }
     }
-
-// класс меч
+    
     [Serializable]
     public class Sword : Weapon
     {
@@ -33,8 +30,7 @@ namespace ConsoleApplication3
             Console.WriteLine("Бьем мечом");
         }
     }
-
-// движение полета
+    
     [Serializable]
     public class FlyMovement : Movement
     {
@@ -43,8 +39,7 @@ namespace ConsoleApplication3
             Console.WriteLine("Летим");
         }
     }
-
-// движение - бег
+    
     [Serializable]
     public class RunMovement : Movement
     {
@@ -61,8 +56,7 @@ namespace ConsoleApplication3
         public abstract Movement CreateMovement();
         public abstract Weapon CreateWeapon();
     }
-
-// Фабрика создания летящего героя с арбалетом
+    
     [Serializable]
     public class ArcherFactory : HeroFactory
     {
@@ -76,8 +70,7 @@ namespace ConsoleApplication3
             return new Arbalet();
         }
     }
-
-// Фабрика создания бегущего героя с мечом
+    
     [Serializable]
     public class WariorFactory : HeroFactory
     {

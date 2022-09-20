@@ -39,8 +39,7 @@ namespace ConsoleApplication3
             // фабричный метод
             abstract public Hero Create();
         }
-
-        // строит панельные дома
+        
         class WariorGuild : Guild
         {
             private static WariorFactory _factory = new WariorFactory();
@@ -53,8 +52,7 @@ namespace ConsoleApplication3
                 return new WariorHero();
             }
         }
-
-        // строит деревянные дома
+        
         class ArcherGuild : Guild
         {
             private static ArcherFactory _factory = new ArcherFactory();
